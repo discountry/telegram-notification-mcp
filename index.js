@@ -13,11 +13,12 @@ if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
 
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-function sendTelegramMessage(message) {
+function sendTelegramMessage(message, parseMode = 'MarkdownV2') {
   return new Promise((resolve, reject) => {
     const params = new URLSearchParams({
       chat_id: TELEGRAM_CHAT_ID,
-      text: message
+      text: message,
+      parse_mode: parseMode
     });
 
     const url = new URL(TELEGRAM_API_URL);
@@ -82,6 +83,11 @@ async function handleRequest(request) {
                   message: {
                     type: 'string',
                     description: 'The message to send'
+                  },
+                  parse_mode: {
+                    type: 'string',
+                    enum: ['MarkdownV2', 'Markdown', 'HTML'],
+                    description: 'Optional. Formatting style for the message. Use MarkdownV2 for Telegram MarkdownV2 format.'
                   }
                 },
                 required: ['message']
@@ -100,7 +106,7 @@ async function handleRequest(request) {
           throw new Error('Message parameter is required');
         }
 
-        const result = await sendTelegramMessage(args.message);
+        const result = await sendTelegramMessage(args.message, args.parse_mode);
         return {
           jsonrpc: '2.0',
           id: requestId,
