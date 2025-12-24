@@ -2,6 +2,7 @@
   "name": "telegram-notification-mcp",
   "version": "1.0.0",
   "description": "A minimal Telegram notification MCP server",
+  "homepage": "https://github.com/discountry/telegram-notification-mcp",
   "type": "module",
   "main": "index.js",
   "bin": {
@@ -15,7 +16,7 @@
     "telegram",
     "notifications"
   ],
-  "author": "",
+  "author": "discountry",
   "license": "MIT",
   "repository": {
     "type": "git",
