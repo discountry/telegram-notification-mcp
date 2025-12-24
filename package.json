@@ -1,0 +1,21 @@
+{
+  "name": "telegram-notification-mcp",
+  "version": "1.0.0",
+  "description": "A minimal Telegram notification MCP server",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "telegram-notification-mcp": "./index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "telegram",
+    "notifications"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
