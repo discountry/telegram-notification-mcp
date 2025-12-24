@@ -16,6 +16,10 @@
     "notifications"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/discountry/telegram-notification-mcp.git"
+  }
 }
 
