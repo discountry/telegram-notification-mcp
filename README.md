@@ -13,7 +13,7 @@ A minimal Telegram notification MCP server using only native Node.js APIs.
 Add the Telegram notification MCP server using the `claude mcp add` command:
 
 ```bash
-claude mcp add --transport stdio telegram-notification \
+claude mcp add --transport stdio telegram-notification --scope user \
   --env TELEGRAM_BOT_TOKEN=YOUR_BOT_TOKEN \
   --env TELEGRAM_CHAT_ID=YOUR_CHAT_ID \
   -- npx -y telegram-notification-mcp
